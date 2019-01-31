@@ -30,9 +30,9 @@ functions:
     handler: users/list.handler
     events:
       - http:
-        path: users
-        method: get
-        cors: true
+          path: users
+          method: get
+          cors: true
 
   show-user:
     handler: users/show.handler
@@ -46,17 +46,17 @@ functions:
     handler: users/update.handler
     events:
       - http:
-        path: users/{id}
-        method: put
-        cors: true
+          path: users/{id}
+          method: put
+          cors: true
 
   delete-user:
     handler: users/delete.handler
     events:
       - http:
-        path: users/{id}
-        method: delete
-        cors: true
+          path: users/{id}
+          method: delete
+          cors: true
 
 resources:
   Resources:
