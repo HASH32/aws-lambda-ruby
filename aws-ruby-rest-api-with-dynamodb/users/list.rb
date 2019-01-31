@@ -7,6 +7,6 @@ def handler(event:, context:)
 
   {
     statusCode: 200,
-    body: JSON.generate(users.to_h)
+    body: JSON.generate(users.to_a.map(&:to_h))
   }
 end
