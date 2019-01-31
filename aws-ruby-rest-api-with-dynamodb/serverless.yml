@@ -19,44 +19,44 @@ provider:
 
 functions:
   create-user:
-    handler: users.create
+    handler: users/create.handler
     events:
       - http:
           path: users
           method: post
           cors: true
 
-  # list-users:
-  #   handler: users.index
-  #   events:
-  #     - http:
-  #       path: users
-  #       method: get
-  #       cors: true
+  list-users:
+    handler: users/list.handler
+    events:
+      - http:
+        path: users
+        method: get
+        cors: true
 
   show-user:
-    handler: users.show
+    handler: users/show.handler
     events:
       - http:
           path: users/{id}
           method: get
           cors: true
 
-  # update-user:
-  #   handler: users.update
-  #   events:
-  #     - http:
-  #       path: users/{id}
-  #       method: put
-  #       cors: true
+  update-user:
+    handler: users/update.handler
+    events:
+      - http:
+        path: users/{id}
+        method: put
+        cors: true
 
-  # delete-user:
-  #   handler: users.delete
-  #   events:
-  #     - http:
-  #       path: users/{id}
-  #       method: delete
-  #       cors: true
+  delete-user:
+    handler: users/delete.handler
+    events:
+      - http:
+        path: users/{id}
+        method: delete
+        cors: true
 
 resources:
   Resources:
