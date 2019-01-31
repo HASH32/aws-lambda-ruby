@@ -10,10 +10,15 @@ def handler(event:, context:)
     name: data['name'],
     age: data['age'],
   )
-  user.save!
 
-  {
-    statusCode: 200,
-    body: JSON.generate(user.to_h)
-  }
+  if user.save
+    {
+      statusCode: 200,
+      body: JSON.generate(user.to_h)
+    }
+  else
+    {
+      statusCode: 403
+    }
+  end
 end
